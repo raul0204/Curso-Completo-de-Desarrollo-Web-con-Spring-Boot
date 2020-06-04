@@ -2,7 +2,7 @@ package com.bytecode.core.model;
 
 import java.util.Date;
 
-public class post {
+public class Post {
 
 	private int id;
 	private String descrpcion;
@@ -40,15 +40,15 @@ public class post {
 		this.titulo = titulo;
 	}
 	
-	public post(int id, String descrpcion, String urlImg, Date fecha, String titulo) {
-		super();
+	public Post(int id, String descrpcion, String urlImg, Date fecha, String titulo) {
+		
 		this.id = id;
 		this.descrpcion = descrpcion;
 		this.urlImg = urlImg;
 		this.fecha = fecha;
 		this.titulo = titulo;
 	}
-	public post() {
+	public Post() {
 		
 	}
 	
