@@ -8,6 +8,7 @@
     <title>Curso de Spring boot</title>
   </head>
   <body>
+    <!--Nav-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">Spring Boot</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,6 +22,7 @@
         </div>
       </div>
     </nav>
+    <!--Header-->
     <div class="jumbotron">
       <h1 class="display-4">Hello, world!</h1>
       <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
@@ -31,6 +33,8 @@
 
     <div class="container">
       <div class="row">
+
+        <!--Cards-->
         <div class="col-3">
           <div class="card" style="width: 18rem;">
             <img th:src="@{/img/post.jpg}" src="../static/img/post.jpg" class="card-img-top" alt="...">
@@ -40,6 +44,62 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img th:src="@{/img/post.jpg}" src="../static/img/post.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img th:src="@{/img/post.jpg}" src="../static/img/post.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-3">
+          <div class="card" style="width: 18rem;">
+            <img th:src="@{/img/post.jpg}" src="../static/img/post.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
 
