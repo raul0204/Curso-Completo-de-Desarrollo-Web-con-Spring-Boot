@@ -24,27 +24,16 @@
     </nav>
     <!--Header-->
     <div class="jumbotron">
-      <h1 class="display-4">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <h1 th:text="${post.titulo}" class="display-4">Hello, world!</h1>
+      <p th:text="${post.descrpcion}" class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
       <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <p th:text="${post.fecha}">It uses utility classes for typography and spacing to space content out within the larger container.</p>
       <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
     </div>
 
     <div class="container">
       <div class="row">
 
-        <!--Cards-->
-        <div th:each="post : ${Posts}" class="col-3">
-          <div class="card" style="width: 18rem;">
-            <img th:src="${post.urlImg}" src="../static/img/post.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 th:text="${post.titulo}" class="card-title">Card title</h5>
-              <p th:text="${post.descrpcion}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a th:href="@{/home/post?id=} + ${post.id}" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
         
       </div>
 
