@@ -5,9 +5,9 @@ import java.util.Date;
 public class Post {
 
 	private int id;
-	private String descrpcion;
-	private String urlImg;
-	private Date fecha;
+	private String descripcion;
+	private String urlImg = "http://localhost/img/post.jpg";
+	private Date fecha = new Date();
 	private String titulo;
 	public int getId() {
 		return id;
@@ -15,11 +15,11 @@ public class Post {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getDescrpcion() {
-		return descrpcion;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public void setDescrpcion(String descrpcion) {
-		this.descrpcion = descrpcion;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 	public String getUrlImg() {
 		return urlImg;
@@ -40,10 +40,10 @@ public class Post {
 		this.titulo = titulo;
 	}
 	
-	public Post(int id, String descrpcion, String urlImg, Date fecha, String titulo) {
+	public Post(int id, String descripcion, String urlImg, Date fecha, String titulo) {
 		
 		this.id = id;
-		this.descrpcion = descrpcion;
+		this.descripcion = descripcion;
 		this.urlImg = urlImg;
 		this.fecha = fecha;
 		this.titulo = titulo;
