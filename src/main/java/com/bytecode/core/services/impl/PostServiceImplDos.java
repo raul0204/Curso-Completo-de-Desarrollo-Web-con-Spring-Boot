@@ -21,4 +21,9 @@ public class PostServiceImplDos implements PostService {
 		return posts;
 	}
 
+	@Override
+	public void addClass(Class clazz) {
+		System.out.println(clazz.getName());
+	}
+
 }

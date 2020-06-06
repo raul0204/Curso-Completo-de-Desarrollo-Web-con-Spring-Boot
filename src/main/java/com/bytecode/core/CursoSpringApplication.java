@@ -21,10 +21,14 @@ public class CursoSpringApplication implements CommandLineRunner {
 	@Qualifier("com.bytecode.core.components.PostComponent")
 	public PostComponent postComponent;
 	
-	@Autowired
-	@Qualifier("serviceDecorado")
-	public PostService postService;
 	
+	public PostService postService;
+
+	@Autowired
+	public CursoSpringApplication(@Qualifier("serviceDecorado")PostService postService) {
+		this.postService = postService;
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(CursoSpringApplication.class, args);
 	}

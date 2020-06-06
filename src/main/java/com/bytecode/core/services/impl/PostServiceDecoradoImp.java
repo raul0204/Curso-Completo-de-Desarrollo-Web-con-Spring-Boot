@@ -32,5 +32,10 @@ public class PostServiceDecoradoImp implements PostService {
 		System.out.println("Esto es la clase decoradora");
 		return posts;
 	}
+	
+	@Override
+	public void addClass(Class clazz) {
+		System.out.println(clazz.getName());
+	}
 
 }
