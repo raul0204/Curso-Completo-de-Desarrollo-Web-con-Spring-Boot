@@ -1,4 +1,4 @@
-package com.bytecode.core.beans;
+package com.bytecode.core.components;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.bytecode.core.model.Post;
 
-@Component
+@Component("com.bytecode.core.components.PostComponent")
 public class PostComponent {
 
 public List<Post> getPosts(){

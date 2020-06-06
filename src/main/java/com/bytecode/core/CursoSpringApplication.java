@@ -6,7 +6,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.bytecode.core.components.PostComponent;
 import com.bytecode.core.model.Conexion;
+import com.bytecode.core.services.PostService;
 
 @SpringBootApplication
 public class CursoSpringApplication implements CommandLineRunner {
@@ -15,13 +17,25 @@ public class CursoSpringApplication implements CommandLineRunner {
 	@Qualifier("beanConexion")
 	private Conexion conexion;
 	
+	@Autowired
+	@Qualifier("com.bytecode.core.components.PostComponent")
+	public PostComponent postComponent;
+	
+	@Autowired
+	@Qualifier("serviceDos")
+	public PostService postService;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(CursoSpringApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(conexion.getDb());
+		postService.validationId(postComponent.getPosts())
+		.forEach((post) -> {
+			System.out.println(post.getTitulo());
+		});
+		
 	}
 
 }

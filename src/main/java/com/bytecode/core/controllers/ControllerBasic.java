@@ -1,7 +1,6 @@
 package com.bytecode.core.controllers;
 
-import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bytecode.core.components.PostComponent;
 import com.bytecode.core.configuration.Paginas;
 import com.bytecode.core.model.Post;
 
@@ -22,10 +22,12 @@ import com.bytecode.core.model.Post;
 public class ControllerBasic {
 	
 	@Autowired
+	private PostComponent _postComponent;
+	
 
 	@GetMapping(path= {"/posts","/"})
 	public String saludar(Model model) {
-		model.addAttribute("Posts", this.getPosts());
+		model.addAttribute("Posts", this._postComponent.getPosts());
 		
 		return "index";
 	}
@@ -43,7 +45,7 @@ public class ControllerBasic {
 			) {
 		ModelAndView modelAndView = new ModelAndView(Paginas.POST);
 		
-		List<Post> postFiltrado = this.getPosts()
+		List<Post> postFiltrado = this._postComponent.getPosts()
 								.stream()
 								.filter( (p) -> {
 									return p.getId() == id;
@@ -59,7 +61,7 @@ public class ControllerBasic {
 	
 	@PostMapping("/addNewPost")
 	public String addNewPost(Post post, Model model) {
-		List<Post> posts = this.getPosts();
+		List<Post> posts = this._postComponent.getPosts();
 		
 		posts.add(post);
 		model.addAttribute("posts", posts);
