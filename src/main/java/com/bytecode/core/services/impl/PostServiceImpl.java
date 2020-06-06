@@ -11,7 +11,7 @@ import com.bytecode.core.services.PostService;
 public class PostServiceImpl implements PostService {
 
 	@Override
-	public List<Post> validationId(List<Post> posts) {
+	public List<Post> validation(List<Post> posts) {
 		System.out.println("Primer Servicio");
 		for(Post post: posts) {
 			if(post.getTitulo() == null) {

@@ -22,7 +22,7 @@ public class CursoSpringApplication implements CommandLineRunner {
 	public PostComponent postComponent;
 	
 	@Autowired
-	@Qualifier("serviceDos")
+	@Qualifier("serviceDecorado")
 	public PostService postService;
 	
 	public static void main(String[] args) {
@@ -31,10 +31,14 @@ public class CursoSpringApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		postService.validationId(postComponent.getPosts())
-		.forEach((post) -> {
-			System.out.println(post.getTitulo());
-		});
+		try {
+			postService.validation(postComponent.getPosts())
+			.forEach((post) -> {
+				System.out.println(post.getTitulo());
+			});
+		}catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
 	}
 
